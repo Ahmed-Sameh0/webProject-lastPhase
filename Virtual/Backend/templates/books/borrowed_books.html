@@ -4,14 +4,11 @@
 <link rel="stylesheet" href="{% static 'books/borrowed_books.css' %}">
 
 <nav>
-    <a href="#">Home</a> |
-    <a href="#">Search</a> |
+    <a href="{% url 'index' %}">Home</a> |
     <a href="{% url 'view_books' %}">Books</a> |
     <a href="{% url 'my_borrows' %}">Borrowed Books</a> |
-    <a href="#">Login</a> |
-    <a href="#">Sign Up</a> |
     <a href="{% url 'add_book_page' %}">Add Book</a> |
-    <a href="#">Manage Books</a> 
+    <a href="{% url 'manage_book' %}">Manage Books</a> 
 </nav>
 <hr>
 <h1>My Borrowed Books</h1>

@@ -1,150 +1,175 @@
-html {
-    scroll-behavior: smooth;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    background-image: url("../image/Background.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    display: grid;
-    place-items: center;
-    margin: 0;
-    min-height: 120vh;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: bold;
-    color: #FFF8F0;
-}
-
-h1 {
-    color:#C08552;
-    text-align: center;
-}
-
-
-h2 {
-    color: #C08552;
-    margin-top: 0;
-    margin-bottom: 30px;
-}
-
-a {
-    text-decoration: none;
-}
-
-form {
-    background-color:#4B2E2B;
-    width: 100%;
-    max-width: 500px;
-    padding: 40px;
-    border-radius: 40px;
-    box-shadow: -20px 20px 30px black;
-}
-
-.names {
-    display: flex;
-    gap: 15px;
-    width: 100%;
-}
-
-.First, .Last {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #C08552;
-}
-
-input {
-    background-color: #8C5A3C;
-    width: 100%;
-    padding: 13px;
-    box-sizing: border-box;
-    border: 1px solid black;
-    border-radius: 30px;
-    margin-bottom: 10px;
-    color: white;   
-}
-
-.pwds {
-    display: flex;
-    gap: 15px;
-    width: 100%;
-}
-
-.pass, .confirm {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.CreateB {
-    font-size: 18px;
-    font-weight: bolder;
-    width: 100%;
-    margin-top: 15px;
-    border: none;
-    padding: 13px;
-    border-radius: 40px;
-    color: #C08552;
-    background-color: #8C5A3C;
-    transition: Background 0.2s;
-    cursor: pointer;
-    margin-bottom: 15px;
-}
-
-.CreateB:hover {
-    background-color: #4a2914;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
     color: white;
-}
-
-input::placeholder {
-    color: #C08552;
-}
-
-.role {
+    background: linear-gradient(to bottom, #12081f, #1d1033, #2b1450);
     display: flex;
-    gap: 60px;
+    flex-direction: column;
+    align-items: center;
 }
 
-.Type {
-    display:flex;
-    gap: 80px;
+/* stars */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(white 1px, transparent 1px);
+    background-size: 120px 120px;
+    opacity: 0.15;
+    z-index: -1;
 }
 
+/* NAV */
 .navbar {
-   position:fixed;
-   top: 0;
-   width: 100%;
-   height: 100px;
-   background-color: #4B2E2B;
-   display:flex;
-   padding: 0px 50px;
-   box-sizing: border-box;
-   align-items: center;
-   justify-content: space-between;
+    width: 92%;
+    margin-top: 20px;
+    padding: 18px 25px;
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .navbar a {
-    font-weight: bolder;
     text-decoration: none;
-    gap: 20px;
-    padding: 10px 30px;
-    border-radius: 30px;
-    font-weight: bold;
-    color:#8C5A3C;
-    background-color: white;
-    transition: all 0.3s ease;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 12px;
+    transition: 0.3s;
 }
 
-.Home:hover, .login:hover {
-    background-color: #4a2914;
-    transform: translateY(-2px);
-    color:white;
+.navbar a:hover {
+    background: rgba(180,120,255,0.2);
+    color: #d8b4ff;
+}
+
+/* page title */
+main h1 {
+    margin-top: 40px;
+    font-size: 40px;
+    color: #f3e8ff;
+    text-align: center;
+}
+
+/* FORM CARD */
+form {
+    width: 90%;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 25px;
+
+    border-radius: 25px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+
+    box-shadow: 0 0 25px rgba(147,51,234,0.15);
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form h2 {
+    text-align: center;
+    color: #f3e8ff;
+}
+
+/* labels */
+label {
+    color: #e9d5ff;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+/* inputs */
+input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 14px;
+
+    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(0,0,0,0.2);
+    color: white;
+
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #9333ea;
+    box-shadow: 0 0 12px rgba(147,51,234,0.3);
+}
+
+/* name row */
+.names {
+    display: flex;
+    gap: 15px;
+}
+
+.names > div {
+    flex: 1;
+}
+
+/* password row */
+.pwds {
+    display: flex;
+    gap: 15px;
+}
+
+.pwds > div {
+    flex: 1;
+}
+
+/* radio groups */
+.role, .Type {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.role label,
+.Type label {
+    color: #e9d5ff;
+    font-size: 14px;
+}
+
+/* button */
+button {
+    margin-top: 10px;
+    padding: 12px;
+    border: none;
+    border-radius: 14px;
+
+    background: #9333ea;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #a855f7;
+    box-shadow: 0 0 15px rgba(192,132,252,0.5);
+}
+
+/* link text */
+form p a {
+    color: #d8b4ff;
+    text-decoration: none;
+}
+
+form p a:hover {
+    text-decoration: underline;
 }

@@ -12,19 +12,16 @@
 <body>
 
 <nav>
-    <a href="#">Home</a> |
-    <a href="#">Search</a> |
+    <a href="{% url 'index' %}">Home</a> |
     <a href="{% url 'view_books' %}">Books</a> |
     <a href="{% url 'my_borrows' %}">Borrowed Books</a> |
-    <a href="#">Login</a> |
-    <a href="#">Sign Up</a> |
     <a href="{% url 'add_book_page' %}">Add Book</a> |
-    <a href="#">Manage Books</a> 
+    <a href="{% url 'manage_book' %}">Manage Books</a> 
 </nav>
 <hr>
 
 <center>
-    <h1><i>ReadSpace</i></h1>
+    <h1><i>Book Galaxy</i></h1>
     <div id="categoryContainer"></div>
 </center>
 

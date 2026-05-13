@@ -10,7 +10,7 @@
 
     <body>
         <nav class="navbar">
-            <a href="index" style="background-color: #4B2E2B;"><h1>Book Corner</h1></a>
+            <a href="index"><h1>Book Corner</h1></a>
             <div class="btn">
                 <a href="index" class="Home">Home</a>
                 <a href="login" class="login">Login</a>
@@ -21,7 +21,7 @@
             <h1>Join Book Corner</h1>
             <form method="post">
                 {% csrf_token %}
-                <h2 style="text-align: center;">Create Account</h2>
+                <h2>Create Account</h2>
                 <div class="names">
                     <div class="First">
                         <label for="First-name">First Name</label>
@@ -51,20 +51,17 @@
                 </div>
                 <div class="role">
                     <label>Gender:</label>
-                    <label style="display:inline;"><input type="radio" name="gender" value="Male">Male</label>
-                    <label style="display:inline;"><input type="radio" name="gender" value="Female">Female</label>
+                    <label><input type="radio" name="gender" value="Male">Male</label>
+                    <label><input type="radio" name="gender" value="Female">Female</label>
                 </div>
                 <div class="Type">
                     <label>Type:</label>
-                    <label style="display:inline;"><input type="radio" name="role" value="user">User</label>
-                    <label style="display:inline;"><input type="radio" name="role" value="admin">Admin</label>
+                    <label><input type="radio" name="role" value="user">User</label>
+                    <label><input type="radio" name="role" value="admin">Admin</label>
                 </div>
                 {% if messages %}
                     {% for message in messages %}
-                        <div id="signup-error" style="color:#e84c3d; text-align:center; font-weight:700;
-                                    background:rgba(232,76,61,0.08); padding:10px 16px;
-                                    border-radius:12px; border:1.5px solid rgba(232,76,61,0.3);
-                                    margin-bottom:12px;">
+                        <div id="signup-error">
                             {{ message }}
                         </div>
                     {% endfor %}
@@ -72,7 +69,7 @@
                 <div>
                     <button class="CreateB" type="submit">Sign Up</button>
                 </div>
-                <p style="text-align: center; color: #C08552; margin-bottom: 0px;">Already have an Account? <a href="login">Login</a></p>
+                <p>Already have an Account? <a href="login">Login</a></p>
             </form>
         </main>
         <script src="{% static 'js/Signup.js' %}"></script>

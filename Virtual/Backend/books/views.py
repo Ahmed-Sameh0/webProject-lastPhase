@@ -91,3 +91,7 @@ def my_borrows(request):
 def book_details_page(request, book_id):
     book = get_object_or_404(Book, id=book_id)
     return render(request, "books/book_details.html", {'book': book})
+
+def manage_book(request):
+    return render(request, 'books/manage_book.html')
+
