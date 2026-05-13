@@ -1,0 +1,150 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url("../image/Background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    display: grid;
+    place-items: center;
+    margin: 0;
+    min-height: 120vh;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    color: #FFF8F0;
+}
+
+h1 {
+    color:#C08552;
+    text-align: center;
+}
+
+
+h2 {
+    color: #C08552;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+a {
+    text-decoration: none;
+}
+
+form {
+    background-color:#4B2E2B;
+    width: 100%;
+    max-width: 500px;
+    padding: 40px;
+    border-radius: 40px;
+    box-shadow: -20px 20px 30px black;
+}
+
+.names {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+.First, .Last {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #C08552;
+}
+
+input {
+    background-color: #8C5A3C;
+    width: 100%;
+    padding: 13px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 30px;
+    margin-bottom: 10px;
+    color: white;   
+}
+
+.pwds {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+.pass, .confirm {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.CreateB {
+    font-size: 18px;
+    font-weight: bolder;
+    width: 100%;
+    margin-top: 15px;
+    border: none;
+    padding: 13px;
+    border-radius: 40px;
+    color: #C08552;
+    background-color: #8C5A3C;
+    transition: Background 0.2s;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.CreateB:hover {
+    background-color: #4a2914;
+    color: white;
+}
+
+input::placeholder {
+    color: #C08552;
+}
+
+.role {
+    display: flex;
+    gap: 60px;
+}
+
+.Type {
+    display:flex;
+    gap: 80px;
+}
+
+.navbar {
+   position:fixed;
+   top: 0;
+   width: 100%;
+   height: 100px;
+   background-color: #4B2E2B;
+   display:flex;
+   padding: 0px 50px;
+   box-sizing: border-box;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.navbar a {
+    font-weight: bolder;
+    text-decoration: none;
+    gap: 20px;
+    padding: 10px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    color:#8C5A3C;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.Home:hover, .login:hover {
+    background-color: #4a2914;
+    transform: translateY(-2px);
+    color:white;
+}

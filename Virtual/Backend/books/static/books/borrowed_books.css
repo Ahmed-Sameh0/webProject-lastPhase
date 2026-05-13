@@ -1,0 +1,36 @@
+.main_table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    border-radius: 2px 2px;
+    overflow: hidden;
+    width: 80%;
+    font-size: 1.1rem;
+}
+
+.main_table thead tr {
+    background-color: #355872;
+    text-align: left;
+    font-weight: bold;
+}
+
+.main_table th, 
+.main_table td {
+    padding: 16px 20px;
+}
+
+.main_table tbody tr{
+    border-bottom: 1px solid gray;
+}
+
+.main_table tbody tr:nth-of-type(even)
+{
+    background-color: rgb(214, 214, 214);
+}
+
+.main_table tbody tr:last-of-type{
+    border-bottom: 5px solid #355872;
+}
+.main_table tbody tr:hover {
+    background-color: #7AAACE;
+    
+}

@@ -1,0 +1,17 @@
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    # existing
+    path('books/',                          views.view_books,       name='view_books'),
+    path('books/add/',                      views.add_book_page,    name='add_book_page'),
+    path('books/<int:book_id>/',            views.book_details_page,name='book_details'),
+    path('api/books/',                      views.get_books,        name='get_books'),
+    path('api/books/add/',                  views.add_book,         name='add_book'),
+    path('api/books/<int:book_id>/',        views.get_book,         name='get_book'),
+
+    # new borrow URLs
+    path('books/<int:book_id>/borrow/',     views.borrow_book,      name='borrow_book'),
+    path('books/<int:book_id>/return/',     views.return_book,      name='return_book'),
+    path('my-books/',                       views.my_borrows,       name='my_borrows'),
+]
