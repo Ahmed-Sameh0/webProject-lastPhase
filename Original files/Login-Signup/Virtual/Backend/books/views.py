@@ -95,3 +95,29 @@ def book_details_page(request, book_id):
 def manage_book(request):
     return render(request, 'books/manage_book.html')
 
+@csrf_exempt
+def edit_book(request, book_id):
+    if request.method != 'PUT':
+        return JsonResponse({'error': 'Method not allowed'}, status=405)
+    book = get_object_or_404(Book, id=book_id)
+    if book.isBorrowed:
+        return JsonResponse({'error': 'Book is borrowed'}, status=400)
+    data = json.loads(request.body)
+    book.name        = data.get('name',        book.name)
+    book.author      = data.get('author',      book.author)
+    book.category    = data.get('category',    book.category)
+    book.description = data.get('description', book.description)
+    book.image       = data.get('image',       book.image)
+    book.save()
+    return JsonResponse({'success': True})
+
+@csrf_exempt
+def delete_book(request, book_id):
+    if request.method != 'DELETE':
+        return JsonResponse({'error': 'Method not allowed'}, status=405)
+    book = get_object_or_404(Book, id=book_id)
+    if book.isBorrowed:
+        return JsonResponse({'error': 'Book is borrowed'}, status=400)
+    book.delete()
+    return JsonResponse({'success': True})
+
