@@ -1,0 +1,86 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Manage Books</title>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mange_book.css' %}">
+</head>
+
+<body>
+
+<nav>
+    <a href="{% url 'home' %}">Home</a>
+    <a href="{% url 'search_books' %}">Search</a>
+    <a href="{% url 'books' %}">Books</a>
+    <a href="{% url 'borrowed_books' %}">Borrowed Books</a>
+    <a href="{% url 'login' %}">Login</a>
+    <a href="{% url 'signup' %}">Sign Up</a>
+    <a href="{% url 'add_book' %}">Add Book</a>
+    <a href="{% url 'manage_books' %}">Manage Books</a>
+</nav>
+
+<hr>
+
+<h1>Manage Books</h1>
+
+<div id="tableContainer">
+
+    <div id="sortRow">
+        <label>Sort by:</label>
+        <select id="sortSelect">
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+            <option value="az">A-Z</option>
+            <option value="za">Z-A</option>
+            <option value="categoryAZ">Category A-Z</option>
+            <option value="categoryZA">Category Z-A</option>
+        </select>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Book Name</th>
+                <th>Author</th>
+                <th>Category</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for book in books %}
+            <tr>
+                <td>{{ book.id }}</td>
+                <td>{{ book.name }}</td>
+                <td>{{ book.author }}</td>
+                <td>{{ book.category }}</td>
+                <td>
+
+                    <a href="{% url 'edit_book' book.id %}">
+                        <button class="edit-btn">Edit</button>
+                    </a>
+
+                    <a href="{% url 'delete_book' book.id %}">
+                        <button class="delete-btn">Delete</button>
+                    </a>
+
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="5" style="text-align:center;">No books found</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+</body>
+</html>
